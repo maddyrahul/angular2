@@ -1,0 +1,7 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: hwb(182 17% 35%);
+    color: rgb(0, 0, 0);
+    min-height: 120vh;
+}

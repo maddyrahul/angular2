@@ -1,0 +1,46 @@
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" data-bs-theme="dark">
+    <div class="container-fluid">
+      <div class="d-flex justify-content-center w-100">
+        <header class="text-white text-center fw-bold fs-3">Result Management System</header>
+      </div>
+      <button type="button" (click)="logout()" class="btn btn-outline-danger "
+      style="position: absolute; right: 0;">
+      Logout
+  </button>
+    </div>
+  </nav>
+  <div class="container-fluid mt-5">
+    <button type="button" class="btn btn-info d-block mr-0 ml-auto">
+      <a [href]="'/student-login'">Back</a>
+    </button>
+  </div>
+  <div class="container-fluid d-flex align-items-center justify-content-center">
+    <div *ngFor="let item of collection">
+      <b style="color: #0b1014; font-size: 42px; margin-left: 75px;">Result</b>
+      <table *ngFor="let item of collection">
+        <thead>
+          <tr>
+            <th>Roll No:</th>
+            <td>{{item.roll_no}}</td>
+          </tr>
+          <tr>
+            <th>Name:</th>
+            <td>{{item.name}}</td>
+          </tr>
+
+          <tr>
+            <th>Date of Birth:</th>
+            <td>{{item.date_of_birth}}</td>
+          </tr>
+          <tr>
+            <th>Score:</th>
+            <td>{{item.score}}</td>
+          </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+</body>
+
+

@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: hwb(182 17% 35%);
+    color: hwb(0 0% 100%);
+    min-height: 120vh;
+}
+.wrapper{
+    max-width: 800px;
+    margin: 2em auto;
+    text-align: center;
+    background-color: hsl(323, 77%, 73%);
+}
+.row.mb-3.mt-3 .col-sm-6 {
+    display: flex;
+    align-items: center;
+}

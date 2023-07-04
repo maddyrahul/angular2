@@ -1,0 +1,10 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(43, 166, 119);
+    color: rgb(1, 6, 8);
+    min-height: 120vh;
+}
+th {
+    padding-right: 40px; 
+  }

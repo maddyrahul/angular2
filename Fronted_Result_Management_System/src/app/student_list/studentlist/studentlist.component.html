@@ -1,0 +1,63 @@
+<body >
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" data-bs-theme="dark">
+        <div class="container-fluid">
+          <div class="d-flex justify-content-center w-100">
+            <header class="text-white text-center fw-bold fs-3">Result Management System</header>
+          </div>
+          <button type="button" (click)="logout()" class="btn  btn-outline-danger btn-rounded btn-hover" style="position: absolute; right: 0; ">
+            <b>Logout</b>
+        </button>
+        </div>
+
+      </nav>
+   
+    
+
+
+    <div class="fixed-header mt-5" style="padding: 10px 20px;">
+        <div class="row">
+            <div class="col">
+              <b class="mb-4" style="font-size: 22px;">All Students</b><br>
+              <button type="button" class="btn">
+                <a [href]="'/add-student'" class="button-link "><b>Add Result</b></a>
+              </button>
+            </div>
+          </div>
+          
+          
+         <!-- show  message if -->
+     <div *ngIf="deleteSuccess" class="alert alert-dismissible fade show" style="background-color: #ef4646;" role="alert">
+      <strong>{{deleteSuccess}}</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+        <table class="table table-success table-striped table-bordered border-11 mt-5    ">
+            <thead>
+                <tr>
+                    <th scope="col">Roll No.</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Date of Birth</th>
+                    <th scope="col">Score</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of collection">
+                    <td>{{item.roll_no}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.date_of_birth}}</td>
+                    <td>{{item.score}}</td>
+                    <td>
+                         <a [href]="'/edit/' + item.roll_no">
+                            <i class="fa fa-pencil" aria-hidden="true" style='font-size:24px;color:#3300ff'></i>
+                        </a>
+                       
+                   
+                        <i class="fa fa-trash w3-padding w3-xlarge w3-text-red" (click)="delete(item.roll_no)">
+                        </i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>

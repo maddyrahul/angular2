@@ -1,0 +1,60 @@
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" data-bs-theme="dark">
+    <div class="container-fluid">
+      <div class="d-flex justify-content-center w-100">
+        <header class="text-white text-center fw-bold fs-3">Result Management System</header>
+      </div>
+    </div>
+  </nav>
+  <div class="fixed-header mt-5">
+    <button type="button" class="btn btn-info d-block mr-0 ml-auto">
+      <a [href]="''">Back</a>
+
+    </button>
+
+  </div>
+  <b style="color: #0b1014; font-size: 22px;">Find Result</b><br>
+
+
+  <!-- show Error message -->
+  <div *ngIf="error" class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>{{error}}</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+  <div >
+    <form style="background-color: hsl(323, 77%, 73%);"  [formGroup]="studentLogin" (ngSubmit)="login()" class="border border-warning mt-4 shadow-lg p-4 mb-4">
+
+      <div class="form-group row mb-3 mt-3">
+        <label class="col-sm-2 col-form-label">Roll No</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" name="roll_no" formControlName="roll_no">
+        </div>
+  
+        <!-- show error message -->
+        <span class="error alert alert-danger" role="alert" *ngIf="roll_no?.invalid && roll_no?.touched">
+          Roll no is required
+        </span>
+  
+      </div>
+  
+      <div class="form-group row mb-3 mt-5">
+        <label class="col-sm-2 col-form-label">Date of Birth</label>
+        <div class="col-sm-10">
+          <input type="date" class="form-control" name="date_of_birth" formControlName="date_of_birth">
+        </div>
+        <span class="error alert alert-danger " role="alert"
+          *ngIf="date_of_birth?.invalid && date_of_birth?.touched">
+          Date of birth is required
+        </span>
+      </div>
+  
+      <div class="form-group row">
+        <div class="col-sm-12">
+          <button type="submit" class="btn btn-success mr-2">Search</button>
+          <button type="reset" class="btn btn-info">Clear</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>

@@ -1,0 +1,7 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: hsl(335, 73%, 66%);
+    color: #a59f2a;
+    min-height: 120vh;
+}
